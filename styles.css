@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #f0c27b, #4b1248);
-    color: white;
+    background-color: #ffddc1;
+    color: #333;
     text-align: center;
     height: 100vh;
     display: flex;
@@ -13,26 +13,24 @@ body {
     overflow: hidden;
 }
 
-/* Container holding the content */
+/* Container for content */
 .container {
     position: relative;
     text-align: center;
-    max-width: 800px;
-    margin: 0 20px;
+    max-width: 900px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Birthday text */
+/* Main Birthday text */
 .birthday-text {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-    color: #ffcc00;
-    animation: fadeIn 2s ease-out;
+    color: #ff6347;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Balloons container */
@@ -42,83 +40,59 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    pointer-events: none; /* Prevent the balloons from interfering with interactions */
+    pointer-events: none; /* Prevent balloons from blocking interaction */
 }
 
 /* Balloon styles */
 .balloon {
     width: 60px;
     height: 80px;
-    background-color: #ff69b4; /* Pink color for the balloon */
-    border-radius: 50%;
     position: absolute;
-    bottom: -100px;
-    animation: float 6s ease-in-out infinite, sway 4s ease-in-out infinite;
+    background-color: #ff6347;
+    border-radius: 50%;
+    animation: balloon-float 6s infinite ease-in-out;
 }
 
 .balloon1 {
     left: 10%;
-    animation-delay: 0s, 2s;
-    background-color: #ff4500;
+    animation-delay: 0s;
+    background-color: #ff6f61;
 }
 
 .balloon2 {
-    left: 20%;
-    animation-delay: 1s, 1.5s;
-    background-color: #32cd32;
+    left: 30%;
+    animation-delay: 1s;
+    background-color: #f39c12;
 }
 
 .balloon3 {
-    left: 30%;
-    animation-delay: 2s, 2s;
-    background-color: #1e90ff;
+    left: 50%;
+    animation-delay: 2s;
+    background-color: #2ecc71;
 }
 
 .balloon4 {
-    left: 50%;
-    animation-delay: 3s, 3s;
-    background-color: #ffcc00;
+    left: 70%;
+    animation-delay: 3s;
+    background-color: #3498db;
 }
 
 .balloon5 {
-    left: 70%;
-    animation-delay: 4s, 2.5s;
-    background-color: #8a2be2;
-}
-
-.balloon6 {
-    left: 80%;
-    animation-delay: 5s, 1s;
-    background-color: #ff1493;
+    left: 85%;
+    animation-delay: 4s;
+    background-color: #9b59b6;
 }
 
 /* Balloon floating animation */
-@keyframes float {
-    0%, 100% {
+@keyframes balloon-float {
+    0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-80px);
+        transform: translateY(-100px);
     }
-}
-
-/* Balloon swaying animation */
-@keyframes sway {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(15deg);
-    }
-}
-
-/* Smooth fade-in animation for text */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+    100% {
+        transform: translateY(0);
     }
 }
 
@@ -126,14 +100,15 @@ body {
 .message {
     font-size: 1.5rem;
     font-style: italic;
-    color: #f1f1f1;
+    color: #333;
     margin-top: 20px;
+    font-weight: 600;
 }
 
-/* Responsive Design */
+/* Responsive design for mobile devices */
 @media (max-width: 768px) {
     .birthday-text {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .message {
@@ -142,6 +117,6 @@ body {
 
     .balloon {
         width: 50px;
-        height: 70px;
+        height: 65px;
     }
 }
