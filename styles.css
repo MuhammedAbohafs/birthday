@@ -1,27 +1,41 @@
-/* General page styles */
+/* General styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f0e4d7;
+    background: linear-gradient(to right, #f0c27b, #4b1248);
+    color: white;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.birthday-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* Container holding the content */
+.container {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Birthday text */
 .birthday-text {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
-    color: #f28d38;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    color: #ffcc00;
+    animation: fadeIn 2s ease-out;
 }
 
+/* Balloons */
 .balloons {
     display: flex;
     justify-content: center;
@@ -30,23 +44,48 @@ body {
 }
 
 .balloon {
-    animation: float 5s infinite;
+    width: 60px;
+    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
     50% {
         transform: translateY(-30px);
     }
-    100% {
-        transform: translateY(0);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
+/* Message text */
 .message {
     font-size: 1.5rem;
-    color: #4a4a4a;
     font-style: italic;
+    color: #f1f1f1;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .birthday-text {
+        font-size: 3rem;
+    }
+
+    .message {
+        font-size: 1.2rem;
+    }
+
+    .balloon {
+        width: 50px;
+    }
 }
